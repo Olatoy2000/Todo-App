@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "json-server": "json-server --watch data/todos.json --port 3001"
   },
   "dependencies": {
     "@types/node": "20.6.4",
@@ -24,6 +25,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "daisyui": "^3.7.7"
+    "daisyui": "^3.7.7",
+    "json-server": "^0.17.3"
   }
 }

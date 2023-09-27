@@ -1,5 +1,6 @@
 import Head from "next/head";
 import AddTask from "./components/AddTask";
+import TodoList from "./components/TodoList";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold">To do App</h1>
         <AddTask />
       </section>
+      <TodoList />
     </main>
   );
 }
