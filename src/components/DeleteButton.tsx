@@ -2,7 +2,7 @@ const DeletButton = ({ id, setTodos }) => {
   return (
     <button
       onClick={(event) => {
-        event.stopPropagtion()
+        event.stopPropagation()
         setTodos((prev) => prev.filter((todo) => todo.id !== id));
       }}
     >

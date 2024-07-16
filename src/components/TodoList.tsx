@@ -1,24 +1,8 @@
-import { useState } from "react";
+
 import DeletButton from "./DeleteButton";
 
-export const TodoList = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "buy gloceries",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      text: "do laundry",
-      isCompleted: true,
-    },
-    {
-      id: 3,
-      text: "prepare for exam",
-      isCompleted: false,
-    },
-  ]);
+export const TodoList = ({ todos, setTodos }) => {
+  
   return (
     <ul>
       {todos.map((todo) => (
