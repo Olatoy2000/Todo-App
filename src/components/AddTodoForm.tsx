@@ -8,8 +8,7 @@ const AddTodoForm = ({ todos, handleAddTodo }) => {
         event.preventDefault();
         handleAddTodo(todoText);
         setTodoText("");
-      }}
-    >
+      }}>
       <h2 className="font-medium text-[#231d15]">Add a todo</h2>
       <input
         type="text"

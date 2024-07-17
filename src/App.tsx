@@ -23,6 +23,22 @@ function App() {
       ]);
     }
   };
+
+  const handleToggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, isCompleted: !todo.isCompleted };
+        }
+        return todo;
+      })
+    );
+  };
+
+  const handleDeleteTodo = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id))
+  };
+
   return (
     <div className="flex flex-col  justify-center items-center font-sans min-h-screen bg-[#f1d4b3]">
       <BackgroundHeading />
@@ -31,7 +47,9 @@ function App() {
       grid grid-cols-[7fr_4fr] grid-rows-[59px_1fr] overflow-hidden"
       >
         <Header todos={todos} />
-        <TodoList todos={todos} setTodos={setTodos} />
+        <TodoList todos={todos} handleToggleTodo={handleToggleTodo}
+        handleDeleteTodo={handleDeleteTodo}
+        />
         <Sidebar todos={todos} handleAddTodo={handleAddTodo} />
       </main>
       <Footer />

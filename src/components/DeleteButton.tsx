@@ -1,9 +1,9 @@
-const DeletButton = ({ id, setTodos }) => {
+const DeleteButton = ({ id, handleDeleteTodo }) => {
   return (
     <button
       onClick={(event) => {
-        event.stopPropagation()
-        setTodos((prev) => prev.filter((todo) => todo.id !== id));
+        event.stopPropagation();
+        handleDeleteTodo(id);
       }}
     >
       ❌
@@ -11,4 +11,4 @@ const DeletButton = ({ id, setTodos }) => {
   );
 };
 
-export default DeletButton;
+export default DeleteButton;

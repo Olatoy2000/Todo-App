@@ -1,25 +1,19 @@
+import DeleteButton from "./DeleteButton";
 
-import DeletButton from "./DeleteButton";
-
-export const TodoList = ({ todos, setTodos }) => { 
+export const TodoList = ({ todos, handleToggleTodo, handleDeleteTodo }) => {
   return (
     <ul>
-      {todos.length === 0 &&
-      <li className="font-semibold flex h-full items-center justify-center">Start adding your todo here</li>   
-    }
+      {todos.length === 0 && (
+        <li className="font-semibold flex h-full items-center justify-center">
+          Start adding your todo here
+        </li>
+      )}
       {todos.map((todo) => (
         <li
           key={todo.id}
           className="flex justify-between items-center px-8 h-[50px] text-[14px] cursor-pointer border-b border-black/[8%]"
           onClick={() => {
-            setTodos(
-              todos.map((t) => {
-                if (t.id === todo.id) {
-                  return { ...t, isCompleted: !t.isCompleted };
-                }
-                return t;
-              })
-            );
+            handleToggleTodo(todo.id);
           }}
         >
           <span
@@ -27,7 +21,7 @@ export const TodoList = ({ todos, setTodos }) => {
           >
             {todo.text}
           </span>
-          <DeletButton id={todo.id} setTodos={setTodos} />
+          <DeleteButton id={todo.id} handleDeleteTodo={handleDeleteTodo} />
         </li>
       ))}
     </ul>
