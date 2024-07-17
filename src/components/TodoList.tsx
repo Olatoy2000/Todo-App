@@ -1,10 +1,12 @@
 
 import DeletButton from "./DeleteButton";
 
-export const TodoList = ({ todos, setTodos }) => {
-  
+export const TodoList = ({ todos, setTodos }) => { 
   return (
     <ul>
+      {todos.length === 0 &&
+      <li className="font-semibold flex h-full items-center justify-center">Start adding your todo here</li>   
+    }
       {todos.map((todo) => (
         <li
           key={todo.id}
