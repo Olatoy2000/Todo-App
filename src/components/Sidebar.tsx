@@ -1,10 +1,10 @@
 import AddTodoForm from "./AddTodoForm";
 import Button from "./Button";
 
-export const Sidebar = ({ todos, handleAddTodo }) => {
+export const Sidebar = ({ handleAddTodo }) => {
   return (
     <section className="flex flex-col px-[25px] pt-[18px] pb-[28px] col-[2/3] row-[2/3] bg-[#fffcf9] border-l border-black/[0.08]">
-      <AddTodoForm todos={todos} handleAddTodo={handleAddTodo}/>
+      <AddTodoForm handleAddTodo={handleAddTodo}/>
       <div className="mt-auto space-y-2">
         <Button buttonType="secondary">
           Log in
